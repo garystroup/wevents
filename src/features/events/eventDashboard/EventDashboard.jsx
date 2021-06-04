@@ -5,19 +5,11 @@ import { useSelector } from 'react-redux';
 
 export default function EventDashboard() {
     const{events} = useSelector(state => state.event)
-  
-
-    function handleDeleteEvent(eventId) {
-        // setEvents(events.filter(evt => evt.id !== eventId));
-    }
     
     return (
         <Grid>
             <Grid.Column width={10}>
-                <EventList 
-                events={events}
-                deleteEvent = {handleDeleteEvent}
-                />
+                <EventList events={events} />
             </Grid.Column>
             <Grid.Column width={6}>
                <h2>Event Filters</h2>
@@ -46,3 +38,6 @@ key={selectedEvent ? selectedEvent.id:null}
     //     setEvents(events.map(evt => evt.id === updatedEvent.id ? updatedEvent : evt));
     //     selectEvent(null);
     // }
+    //function handleDeleteEvent(eventId) {
+        // setEvents(events.filter(evt => evt.id !== eventId));
+    //}
